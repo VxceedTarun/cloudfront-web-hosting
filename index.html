@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New_Test_Page</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 420px;
+    animation: fadeUp 0.8s ease;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+  }
+
+  .status {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #999;
+  }
+
+  #time {
+    font-weight: bold;
+    color: #764ba2;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <span class="badge">✓ TEST PAGE</span>
+    <h1>It Works! Perfectly Fine</h1>
+    <p>It is a sample HTML page for a testing purposes. If you can see this styled correctly, your browser is rendering HTML/CSS just fine.</p>
+    <button class="btn" onclick="document.getElementById('time').textContent = new Date().toLocaleTimeString()">
+      Check_Current_Time
+    </button>
+    <div class="status">Last checked: <span id="time">--:--:--</span></div>
+  </div>
+
+<script>
+  document.getElementById('time').textContent = new Date().toLocaleTimeString();
+</script>
+
+</body>
+</html>
